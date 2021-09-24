@@ -1,0 +1,14 @@
+D:\MyProjects\Football Game Model\bin\Debug\netcoreapp3.1\Football Game Model.exe
+D:\MyProjects\Football Game Model\bin\Debug\netcoreapp3.1\Football Game Model.deps.json
+D:\MyProjects\Football Game Model\bin\Debug\netcoreapp3.1\Football Game Model.runtimeconfig.json
+D:\MyProjects\Football Game Model\bin\Debug\netcoreapp3.1\Football Game Model.runtimeconfig.dev.json
+D:\MyProjects\Football Game Model\bin\Debug\netcoreapp3.1\Football Game Model.dll
+D:\MyProjects\Football Game Model\bin\Debug\netcoreapp3.1\Football Game Model.pdb
+D:\MyProjects\Football Game Model\obj\Debug\netcoreapp3.1\Football Game Model.AssemblyInfoInputs.cache
+D:\MyProjects\Football Game Model\obj\Debug\netcoreapp3.1\Football Game Model.AssemblyInfo.cs
+D:\MyProjects\Football Game Model\obj\Debug\netcoreapp3.1\Football Game Model.csproj.CoreCompileInputs.cache
+D:\MyProjects\Football Game Model\obj\Debug\netcoreapp3.1\Football Game Model.dll
+D:\MyProjects\Football Game Model\obj\Debug\netcoreapp3.1\Football Game Model.pdb
+D:\MyProjects\Football Game Model\obj\Debug\netcoreapp3.1\Football Game Model.genruntimeconfig.cache
+D:\MyProjects\Football Game Model\obj\Debug\netcoreapp3.1\Football Game Model.csproj.AssemblyReference.cache
+D:\MyProjects\Football Game Model\obj\Debug\netcoreapp3.1\Football Game Model.GeneratedMSBuildEditorConfig.editorconfig
