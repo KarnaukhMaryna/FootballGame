@@ -11,12 +11,14 @@ namespace Football_Game_Model
         public double team_level;
         public List<Footballer> list;
         public Coach coach;
+        public TeamsOwner owner;
 
-        public Team(string team_name, Coach coach)
+        public Team(string team_name, Coach coach, TeamsOwner owner)
         {
             this.team_name = team_name;
             this.list = new List<Footballer>();
             this.coach = coach;
+            this.owner = owner;
         }
 
         public void AddFootballer(string name, int age)

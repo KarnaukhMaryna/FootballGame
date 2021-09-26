@@ -8,6 +8,7 @@ namespace Football_Game_Model
     {
         public string name;
         public double level;
+        public int honesty;
 
         public Coach(string name)
         {
@@ -19,6 +20,7 @@ namespace Football_Game_Model
                 this.level = 1 + a;
             }
             else this.level = a;
+            this.honesty = rand.Next(0, 2);
         }
     }
 }

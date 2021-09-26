@@ -17,7 +17,7 @@ namespace Football_Game_Model
             this.referee = referee;
         }
 
-        public void ResultGame()
+        public void HonestGame()
         {
             double l1 = team1.TeamLevel();
             double l2 = team2.TeamLevel();
@@ -37,13 +37,52 @@ namespace Football_Game_Model
                 Console.WriteLine("{0} team is winner ", team1.team_name);
             }
             else if (((l2 - l1) / l1 * 100) > 10)
+            {
+                Console.WriteLine("{0} team is winner ", team2.team_name);
+            }
+            else
+                Console.WriteLine("Draw");
+
+        }
+
+        public void ResultGame()
+        {
+            double l1 = team1.TeamLevel();
+            double l2 = team2.TeamLevel();
+            if(referee.honesty == 1)
+            {
+                if (team1.coach.honesty ==1 && team2.coach.honesty == 1)
+                {
+                    HonestGame();
+                }
+                else if(team1.coach.honesty == 0 && team2.coach.honesty == 1)
+                {
+                    Console.WriteLine("{0} team has technical win, because {1} team uses doping", team2.team_name, team1.team_name);
+                    throw new GameException();   
+                }
+                else if(team2.coach.honesty == 0 && team1.coach.honesty == 1)
+                {
+                    Console.WriteLine("{0} team has technical win, because {1} team uses doping",team1.team_name, team2.team_name);
+                    throw new GameException();
+                }
+                else if (team1.coach.honesty == 0 && team2.coach.honesty == 0)
+                {
+                    Console.WriteLine("There are no winners.");
+                    throw new GameException();
+                }
+            }
+            else
+            {
+                if (team1.owner.sumForReferee > team2.owner.sumForReferee)
+                {
+                    Console.WriteLine("{0} team is winner ", team1.team_name);
+                }
+                else if (team2.owner.sumForReferee > team1.owner.sumForReferee)
                 {
                     Console.WriteLine("{0} team is winner ", team2.team_name);
                 }
-             else
-                    Console.WriteLine("Draw");
-            
-            
+                else HonestGame();
+            }
         }
 
     }

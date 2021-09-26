@@ -8,12 +8,14 @@ namespace Football_Game_Model
     {
         public string name;
         public int preference;
+        public int honesty;
 
         public Referee(string name)
         {
             this.name = name;
             Random rand = new Random();
             this.preference = rand.Next(0, 3);
+            this.honesty = rand.Next(0, 2);
         }
     }
 }
