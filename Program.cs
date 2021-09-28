@@ -40,7 +40,14 @@ namespace Football_Game_Model
             Referee r1 = new Referee("Ivanov");
             Console.WriteLine("Referee {0} has preference {1} ", r1.name, r1.preference);
             Console.WriteLine("Referee {0} honesty is {1} ", r1.name, r1.honesty);
+
             Game game = new Game(t1,t2,r1);
+            Referee.HandlerFoul newFaul = new Referee.HandlerFoul();
+            Referee.HandlerGoal newGoal = new Referee.HandlerGoal();
+
+            Game.Foul += newFaul.Message;
+            Game.Goal += newGoal.Message;
+            
             try
             {
                 game.ResultGame();

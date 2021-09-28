@@ -10,11 +10,31 @@ namespace Football_Game_Model
         public Team team2;
         public Referee referee;
 
+        public delegate void Football();
+
+        public static event Football Foul;
+        public static event Football Goal;
+
         public Game (Team team1, Team team2, Referee referee)
         {
             this.team1 = team1;
             this.team2 = team2;
             this.referee = referee;
+        }
+
+        public void StartGame()
+        {
+            Random rand = new Random();
+            int f = rand.Next(0, 2);
+            int g = rand.Next(0, 2);
+            if (f == 1)
+            {
+                Foul();
+            }
+            if (g == 1)
+            {
+                Goal();
+            }
         }
 
         public void HonestGame()
@@ -53,6 +73,7 @@ namespace Football_Game_Model
             {
                 if (team1.coach.honesty ==1 && team2.coach.honesty == 1)
                 {
+                    StartGame();
                     HonestGame();
                 }
                 else if(team1.coach.honesty == 0 && team2.coach.honesty == 1)
@@ -75,13 +96,17 @@ namespace Football_Game_Model
             {
                 if (team1.owner.sumForReferee > team2.owner.sumForReferee)
                 {
-                    Console.WriteLine("{0} team is winner ", team1.team_name);
+                    Console.WriteLine("{0} team is winner, because their owner pays more money.", team1.team_name);
                 }
                 else if (team2.owner.sumForReferee > team1.owner.sumForReferee)
                 {
-                    Console.WriteLine("{0} team is winner ", team2.team_name);
+                    Console.WriteLine("{0} team is winner, because their owner pays more money.", team2.team_name);
                 }
-                else HonestGame();
+                else
+                {
+                    StartGame();
+                    HonestGame();
+                }
             }
         }
 
