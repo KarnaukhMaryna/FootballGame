@@ -7,8 +7,8 @@ namespace Football_Game_Model
     class TeamsOwner
     {
         public string name;
-        public int honesty;
-        public int sumForReferee;
+        public int honesty; //this field defines if the team's owner will give a bribe for the referee
+        public int sumForReferee; //this field defines the sum of the bribe
 
         public TeamsOwner(string name)
         {

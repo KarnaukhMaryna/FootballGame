@@ -37,7 +37,7 @@ namespace Football_Game_Model
             }
         }
 
-        public void HonestGame()
+        public void HonestGame() 
         {
             double l1 = team1.TeamLevel();
             double l2 = team2.TeamLevel();
@@ -71,22 +71,22 @@ namespace Football_Game_Model
             double l2 = team2.TeamLevel();
             if(referee.honesty == 1)
             {
-                if (team1.coach.honesty ==1 && team2.coach.honesty == 1)
+                if (team1.coach.honesty ==1 && team2.coach.honesty == 1) //both coaches don't give doping to their teams
                 {
                     StartGame();
                     HonestGame();
                 }
-                else if(team1.coach.honesty == 0 && team2.coach.honesty == 1)
+                else if(team1.coach.honesty == 0 && team2.coach.honesty == 1) //coach of the first team gives doping to his teams
                 {
                     Console.WriteLine("{0} team has technical win, because {1} team uses doping", team2.team_name, team1.team_name);
                     throw new GameException();   
                 }
-                else if(team2.coach.honesty == 0 && team1.coach.honesty == 1)
+                else if(team2.coach.honesty == 0 && team1.coach.honesty == 1) //coach of the second team gives doping to his teams
                 {
                     Console.WriteLine("{0} team has technical win, because {1} team uses doping",team1.team_name, team2.team_name);
                     throw new GameException();
                 }
-                else if (team1.coach.honesty == 0 && team2.coach.honesty == 0)
+                else if (team1.coach.honesty == 0 && team2.coach.honesty == 0) //both coaches give doping to their teams
                 {
                     Console.WriteLine("There are no winners.");
                     throw new GameException();
@@ -94,11 +94,11 @@ namespace Football_Game_Model
             }
             else
             {
-                if (team1.owner.sumForReferee > team2.owner.sumForReferee)
+                if (team1.owner.sumForReferee > team2.owner.sumForReferee) // the owner of first team gives more money to the referee and get the win
                 {
                     Console.WriteLine("{0} team is winner, because their owner pays more money.", team1.team_name);
                 }
-                else if (team2.owner.sumForReferee > team1.owner.sumForReferee)
+                else if (team2.owner.sumForReferee > team1.owner.sumForReferee) // the owner of second team gives more money to the referee and get the win
                 {
                     Console.WriteLine("{0} team is winner, because their owner pays more money.", team2.team_name);
                 }

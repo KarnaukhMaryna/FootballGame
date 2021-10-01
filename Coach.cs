@@ -8,7 +8,7 @@ namespace Football_Game_Model
     {
         public string name;
         public double level;
-        public int honesty;
+        public int honesty; //this field defines if the coach gives doping to his team
 
         public Coach(string name)
         {

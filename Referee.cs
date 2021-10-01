@@ -8,7 +8,7 @@ namespace Football_Game_Model
     {
         public string name;
         public int preference;
-        public int honesty;
+        public int honesty; //the field defines if the referee will take bribes from the teams' owners
 
         public Referee(string name)
         {
